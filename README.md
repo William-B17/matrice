@@ -29,7 +29,7 @@ Change database to the name of the database you are using if you do not wish to 
 dbconfig = {
   "database": "valde",
   "user":     "root",
-  "host":     "localhost"
+  "host":     "localhost" # if database is not running locally, host should be the ip of the database server. 
 }
 ```
 
