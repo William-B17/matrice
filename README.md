@@ -17,7 +17,7 @@
 ```
 
 ## Usage
-1. Open to terminals at the root of the project. (there should only be 3 files: sql.sql, valde/ and server/).
+1. Open to terminals at the root of the project.
 2. At terminal one cd to valde and type `npm start` (to start the client).
 3. At terminal 2 cd to server and type `py main.py` (not sure if it works on linux and or mac).
 
