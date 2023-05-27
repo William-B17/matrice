@@ -23,6 +23,7 @@
 
 ## Config
 **Server**
+
 Change database to the name of the database you are using if you do not wish to use the one provided in `sql.sql`
 ```python
 dbconfig = {
@@ -33,6 +34,7 @@ dbconfig = {
 ```
 
 **Client**
+
 Go to `valde/src/App.tsx` and configure below.
 ```typescript
 function getData() {
