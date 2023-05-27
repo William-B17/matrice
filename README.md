@@ -18,5 +18,31 @@
 
 ## Usage
 1. Open to terminals at the root of the project. (there should only be 3 files: sql.sql, valde/ and server/).
-2. At terminal one cd to valde and type npm start (to start the client)
-3. At terminal 2 cd to server and type py main.py (not sure if it works on linux and or mac)
+2. At terminal one cd to valde and type `npm start` (to start the client).
+3. At terminal 2 cd to server and type `py main.py` (not sure if it works on linux and or mac).
+
+## Config
+**Server**
+Change database to the name of the database you are using if you do not wish to use the one provided in `sql.sql`
+```python
+dbconfig = {
+  "database": "valde",
+  "user":     "root",
+  "host":     "localhost"
+}
+```
+
+**Client**
+Go to `valde/src/App.tsx` and configure below.
+```typescript
+function getData() {
+    fetch("http://localhost:5000/members").then( // localhost should be the server ip if you are not using your not testing on a local machine.
+      res => res.json()
+    ).then(
+      data => {
+        console.log(data)
+        setdata(data)
+      }
+    )
+  }
+```
