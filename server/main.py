@@ -48,10 +48,12 @@ def savedata():
     try:
         clientRequest = request.get_json()
         if clientRequest["value"]:
-            if clientRequest["data"]["rows"][clientRequest["row"]][clientRequest["area"]]:
+            isOld = [i for i in clientRequest["data"]["rows"][clientRequest["row"]] if i == clientRequest["area"]]
+            if isOld:
                 query(connection,"UPDATE `stuff` SET `skill`=%s WHERE `month`=%s AND `area`=%s",int(clientRequest["value"]),int(clientRequest["row"]),clientRequest["area"])
             else:
                 query(connection,"INSERT INTO `stuff`(`month`, `area`, `skill`) VALUES (%s,%s,%s)",int(clientRequest["row"]),clientRequest["area"],int(clientRequest["value"]))
+
         return [clientRequest]
     except:
         return 'Internal Server Error!', 500
